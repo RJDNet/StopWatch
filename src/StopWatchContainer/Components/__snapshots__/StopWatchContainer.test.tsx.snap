@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StopWatchContainer Component StopWatch renders correctly with all props & no redux store 1`] = `
+<div
+  className="stopwatches-container"
+>
+  <h1
+    className="stopwatches-container__header"
+  >
+    Stopwatch App
+  </h1>
+  <div
+    className="stopwatches-container__button-container"
+  >
+    <button
+      className="stopwatches-container__button-container__add-button"
+      onClick={[Function]}
+    >
+      ADD ONE
+    </button>
+    <button
+      className="stopwatches-container__button-container__removeall-button"
+      onClick={[Function]}
+    >
+      REMOVE ALL
+    </button>
+  </div>
+  <div
+    className="stopwatches-container__button-container"
+  >
+    <input
+      className="stopwatches-container__button-container__amount-input"
+      onChange={[Function]}
+      type="number"
+      value=""
+    />
+    <button
+      className="stopwatches-container__button-container__addx-button"
+      onClick={[Function]}
+    >
+      ADD X
+    </button>
+  </div>
+  <div
+    className="stopwatches-container__stopwatch-flexcontainer"
+  />
+</div>
+`;
+
+exports[`StopWatchContainer Component StopWatchContainer renders correctly with no props 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
+>
+  <Connect(StopWatchContainer) />
+</ContextProvider>
+`;

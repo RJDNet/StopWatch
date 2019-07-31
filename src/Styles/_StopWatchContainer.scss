@@ -1,0 +1,72 @@
+%containerButton {
+    height: 35px;
+    width: 100px;
+    margin: $small-margin / 2;
+    padding: $small-padding / 2;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
+    color: var(--stopwatch-container-removeall-button-text-brush);
+    cursor: pointer;
+
+    &:active {
+        box-shadow: 2px 2px #666;
+        transform: translateY(2px);
+    }
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.stopwatches-container {
+    display: block;
+    background-color: var(--stopwatch-strip-brush);
+    font-family: $font-family;
+
+    & > .stopwatches-container__header {
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        padding: $small-padding;
+        background-color: white;
+    }
+
+    & > .stopwatches-container__button-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0px auto;
+        padding: $small-padding;
+        box-sizing: border-box;
+        background-color: white;
+
+        & > .stopwatches-container__button-container__add-button {
+            @extend %containerButton;
+            background-color: var(--stopwatch-container-add-button-brush);
+        }
+
+        & > .stopwatches-container__button-container__addx-button {
+            @extend %containerButton;
+            background-color: var(--stopwatch-container-add-button-brush);
+        }
+
+        & > .stopwatches-container__button-container__amount-input {
+            font-family: $font-family;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        & > .stopwatches-container__button-container__removeall-button {
+            @extend %containerButton;
+            background-color: var(--stopwatch-container-removeall-button-brush);
+        }
+    }
+
+    & > .stopwatches-container__stopwatch-flexcontainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

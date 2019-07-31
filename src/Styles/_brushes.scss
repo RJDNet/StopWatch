@@ -1,0 +1,20 @@
+:root {
+    // Stopwatch Container
+    --stopwatch-container-add-button-brush: green;
+    --stopwatch-container-removeall-button-brush: red;
+    --stopwatch-container-removeall-button-text-brush: white;
+
+    // Stopwatch
+    --stopwatch-strip-brush: lightgray;
+    --stopwatch-brush: white;
+    --stopwatch-border-brush: gray;
+
+    // stopwatch buttons
+    --stopwatch-button-boxshadow-brush: darkgray;
+    --stopwatch-button-text-brush: white;
+    --stopwatch-button-hover-brush: gray;
+    --stopwatch-button-start-brush: green;
+    --stopwatch-button-stop-brush: red;
+    --stopwatch-button-reset-brush: orange;
+    --stopwatch-button-remove-brush: red;
+}

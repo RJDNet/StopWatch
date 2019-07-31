@@ -1,0 +1,154 @@
+:root {
+  --stopwatch-container-add-button-brush: green;
+  --stopwatch-container-removeall-button-brush: red;
+  --stopwatch-container-removeall-button-text-brush: white;
+  --stopwatch-strip-brush: lightgray;
+  --stopwatch-brush: white;
+  --stopwatch-border-brush: gray;
+  --stopwatch-button-boxshadow-brush: darkgray;
+  --stopwatch-button-text-brush: white;
+  --stopwatch-button-hover-brush: gray;
+  --stopwatch-button-start-brush: green;
+  --stopwatch-button-stop-brush: red;
+  --stopwatch-button-reset-brush: orange;
+  --stopwatch-button-remove-brush: red;
+}
+
+.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {
+  height: 35px;
+  width: 100px;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  -webkit-box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
+          box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
+  color: var(--stopwatch-container-removeall-button-text-brush);
+  cursor: pointer;
+}
+
+.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button:active, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button:active, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button:active {
+  -webkit-box-shadow: 2px 2px #666;
+          box-shadow: 2px 2px #666;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.stopwatches-container {
+  display: block;
+  background-color: var(--stopwatch-strip-brush);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.stopwatches-container > .stopwatches-container__header {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+}
+
+.stopwatches-container > .stopwatches-container__button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin: 0px auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+}
+
+.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button {
+  background-color: var(--stopwatch-container-add-button-brush);
+}
+
+.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button {
+  background-color: var(--stopwatch-container-add-button-brush);
+}
+
+.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__amount-input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {
+  background-color: var(--stopwatch-container-removeall-button-brush);
+}
+
+.stopwatches-container > .stopwatches-container__stopwatch-flexcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.stopwatch > .stopwatch__startstop-button, .stopwatch > .stopwatch__startstop-button--start, .stopwatch > .stopwatch__startstop-button--stop, .stopwatch > .stopwatch__reset-button, .stopwatch > .stopwatch__remove-button {
+  height: 30px;
+  width: 60px;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  -webkit-box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
+          box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
+  color: var(--stopwatch-button-text-brush);
+  font-size: 0.7em;
+  cursor: pointer;
+}
+
+.stopwatch > .stopwatch__startstop-button:active, .stopwatch > .stopwatch__startstop-button--start:active, .stopwatch > .stopwatch__startstop-button--stop:active, .stopwatch > .stopwatch__reset-button:active, .stopwatch > .stopwatch__remove-button:active {
+  -webkit-box-shadow: 2px 2px #666;
+          box-shadow: 2px 2px #666;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.stopwatch {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid var(--stopwatch-border-brush);
+  border-radius: 6px;
+  background-color: var(--stopwatch-brush);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.stopwatch > .stopwatch__timer {
+  margin: 10px;
+  padding: 3.33333px;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+.stopwatch > .stopwatch__startstop-button--start {
+  background-color: var(--stopwatch-button-start-brush);
+}
+
+.stopwatch > .stopwatch__startstop-button--stop {
+  background-color: var(--stopwatch-button-stop-brush);
+}
+
+.stopwatch > .stopwatch__reset-button {
+  color: black;
+}
+
+.stopwatch > .stopwatch__remove-button {
+  background-color: var(--stopwatch-button-remove-brush);
+}
+/*# sourceMappingURL=index.css.map */
