@@ -77,9 +77,10 @@ body {
 }
 
 .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__amount-input {
+  width: 120px;
+  padding: 5px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  text-align: center;
+  font-size: 0.7em;
 }
 
 .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {

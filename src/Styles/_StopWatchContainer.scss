@@ -53,9 +53,10 @@ body {
         }
 
         & > .stopwatches-container__button-container__amount-input {
+            width: 120px;
+            padding: $small-padding / 2;
             font-family: $font-family;
-            font-size: 1em;
-            text-align: center;
+            font-size: 0.7em;
         }
 
         & > .stopwatches-container__button-container__removeall-button {

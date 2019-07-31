@@ -63,7 +63,7 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 				<button className={BUTTON_CONTAINER_REMOVE_BUTTON_CLASSNAME} onClick={removeAllStopWatches}>REMOVE ALL</button>
 			</div>
 			<div className={BUTTON_CONTAINER_CLASSNAME}>
-				<input className={BUTTON_CONTAINER_AMOUNT_INPUT_CLASSNAME} type='number' value={amount} onChange={e => setAmount(e.target.value)}></input>
+				<input className={BUTTON_CONTAINER_AMOUNT_INPUT_CLASSNAME} type='number' placeholder='Enter Amount...' value={amount} onChange={e => setAmount(e.target.value)}></input>
 				<button className={BUTTON_CONTAINER_ADDX_BUTTON_CLASSNAME} onClick={addXStopWatch}>ADD X</button>
 			</div>
 			<div className={STOPWATCH_FLEXCONTAINER_CLASSNAME}>
