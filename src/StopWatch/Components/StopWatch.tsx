@@ -24,7 +24,8 @@ interface IMapProps {
 type IComponentProps = IRawProps & IStoreProps & IMapProps;
 
 export const StopWatch: React.FC<IComponentProps> = (props): JSX.Element => {
-  console.log(`@@@ StopWatch.render id=${props.id}`);
+  // Rendering check
+  // console.log(`@@@ StopWatch.render id=${props.id}`);
   const { 
     dispatch,
     className,

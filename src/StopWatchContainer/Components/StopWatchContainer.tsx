@@ -39,7 +39,7 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 	
 	const watches: React.ReactElement[] = stopWatchList.map((k) => {		
 		return (
-			<Zoom>
+			<Zoom key={k}>
 				<StopWatch
 					className={STOPWATCH_CLASSNAME} 
 					key={k}
