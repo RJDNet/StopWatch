@@ -24,6 +24,7 @@
   -webkit-box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
           box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
   color: var(--stopwatch-container-removeall-button-text-brush);
+  font-size: 0.7em;
   cursor: pointer;
 }
 
@@ -41,16 +42,22 @@ body {
 
 .stopwatches-container {
   display: block;
-  background-color: var(--stopwatch-strip-brush);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .stopwatches-container > .stopwatches-container__header {
   margin: 0px;
-  padding: 0px;
-  text-align: center;
   padding: 10px;
+  text-align: center;
   background-color: white;
+}
+
+.stopwatches-container > .stopwatches-container__counter-header {
+  text-align: center;
+}
+
+.stopwatches-container > .stopwatches-container__counter {
+  text-align: center;
 }
 
 .stopwatches-container > .stopwatches-container__button-container {
@@ -65,7 +72,6 @@ body {
   padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: white;
 }
 
 .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button {
@@ -122,7 +128,7 @@ body {
 
 .stopwatch {
   margin: 10px;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid var(--stopwatch-border-brush);
   border-radius: 6px;
   background-color: var(--stopwatch-brush);

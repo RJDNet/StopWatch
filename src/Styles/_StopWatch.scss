@@ -7,7 +7,7 @@
     border-radius: 6px;
     box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
     color: var(--stopwatch-button-text-brush);
-    font-size: 0.7em;
+    font-size: $small-font-size;
     cursor: pointer;
 
     &:active {
@@ -18,7 +18,7 @@
 
 .stopwatch {
     margin: $small-margin;
-    padding: $small-padding * 2;
+    padding: $small-padding;
     border: 1px solid var(--stopwatch-border-brush);
     border-radius: 6px;
     background-color: var(--stopwatch-brush);

@@ -7,6 +7,7 @@
     border-radius: 6px;
     box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
     color: var(--stopwatch-container-removeall-button-text-brush);
+    font-size: $small-font-size;
     cursor: pointer;
 
     &:active {
@@ -22,15 +23,21 @@ body {
 
 .stopwatches-container {
     display: block;
-    background-color: var(--stopwatch-strip-brush);
     font-family: $font-family;
 
     & > .stopwatches-container__header {
         margin: 0px;
-        padding: 0px;
-        text-align: center;
         padding: $small-padding;
+        text-align: center;
         background-color: white;
+    }
+
+    & > .stopwatches-container__counter-header {
+        text-align: center;
+    }
+
+    & > .stopwatches-container__counter {
+        text-align: center;
     }
 
     & > .stopwatches-container__button-container {
@@ -40,7 +47,6 @@ body {
         margin: 0px auto;
         padding: $small-padding;
         box-sizing: border-box;
-        background-color: white;
 
         & > .stopwatches-container__button-container__add-button {
             @extend %containerButton;
