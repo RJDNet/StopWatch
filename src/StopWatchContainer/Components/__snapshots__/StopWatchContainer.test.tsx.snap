@@ -31,6 +31,7 @@ exports[`StopWatchContainer Component StopWatch renders correctly with all props
     <input
       className="stopwatches-container__button-container__amount-input"
       onChange={[Function]}
+      placeholder="Enter Amount..."
       type="number"
       value=""
     />
