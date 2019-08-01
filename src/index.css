@@ -2,7 +2,7 @@
   --stopwatch-container-add-button-brush: green;
   --stopwatch-container-removeall-button-brush: red;
   --stopwatch-container-removeall-button-text-brush: white;
-  --stopwatch-strip-brush: lightgray;
+  --stopwatch-strip-brush: darkgray;
   --stopwatch-brush: white;
   --stopwatch-border-brush: gray;
   --stopwatch-button-boxshadow-brush: darkgray;
@@ -16,7 +16,7 @@
 
 .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {
   height: 35px;
-  width: 100px;
+  width: 80px;
   margin: 5px;
   padding: 5px;
   border: 2px solid transparent;
@@ -24,7 +24,7 @@
   -webkit-box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
           box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
   color: var(--stopwatch-container-removeall-button-text-brush);
-  font-size: 0.7em;
+  font-size: 0.6em;
   cursor: pointer;
 }
 
@@ -52,11 +52,9 @@ body {
   background-color: white;
 }
 
-.stopwatches-container > .stopwatches-container__counter-header {
-  text-align: center;
-}
-
 .stopwatches-container > .stopwatches-container__counter {
+  margin: 0px;
+  padding: 0px;
   text-align: center;
 }
 
@@ -103,6 +101,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 30px;
+  background-color: var(--stopwatch-strip-brush);
 }
 
 .stopwatch > .stopwatch__startstop-button, .stopwatch > .stopwatch__startstop-button--start, .stopwatch > .stopwatch__startstop-button--stop, .stopwatch > .stopwatch__reset-button, .stopwatch > .stopwatch__remove-button {
@@ -115,7 +114,7 @@ body {
   -webkit-box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
           box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
   color: var(--stopwatch-button-text-brush);
-  font-size: 0.7em;
+  font-size: 0.6em;
   cursor: pointer;
 }
 

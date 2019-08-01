@@ -1,6 +1,6 @@
 %containerButton {
     height: 35px;
-    width: 100px;
+    width: 80px;
     margin: $small-margin / 2;
     padding: $small-padding / 2;
     border: 2px solid transparent;
@@ -32,11 +32,9 @@ body {
         background-color: white;
     }
 
-    & > .stopwatches-container__counter-header {
-        text-align: center;
-    }
-
     & > .stopwatches-container__counter {
+        margin: 0px;
+        padding: 0px;
         text-align: center;
     }
 
@@ -76,5 +74,6 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         padding: $medium-padding;
+        background-color: var(--stopwatch-strip-brush);
     }
 }
