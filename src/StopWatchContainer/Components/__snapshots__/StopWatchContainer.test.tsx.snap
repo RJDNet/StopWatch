@@ -9,6 +9,12 @@ exports[`StopWatchContainer Component StopWatch renders correctly with all props
   >
     Stopwatch App
   </h1>
+  <p
+    className="stopwatches-container__amount"
+  >
+    Stopwatch Amount: 
+    0
+  </p>
   <div
     className="stopwatches-container__button-container"
   >
@@ -31,7 +37,7 @@ exports[`StopWatchContainer Component StopWatch renders correctly with all props
     <input
       className="stopwatches-container__button-container__amount-input"
       onChange={[Function]}
-      placeholder="Enter Amount..."
+      placeholder="Enter X Amount..."
       type="number"
       value=""
     />

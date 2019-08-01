@@ -16,11 +16,6 @@
     }
 }
 
-body {
-    margin: 0px;
-    padding: 0px;
-}
-
 .stopwatches-container {
     display: block;
     font-family: $font-family;
@@ -32,7 +27,7 @@ body {
         background-color: white;
     }
 
-    & > .stopwatches-container__counter {
+    & > .stopwatches-container__amount {
         margin: 0px;
         padding: 0px;
         text-align: center;
@@ -43,7 +38,7 @@ body {
         justify-content: center;
         width: 100%;
         margin: 0px auto;
-        padding: $small-padding;
+        padding: $small-padding / 2;
         box-sizing: border-box;
 
         & > .stopwatches-container__button-container__add-button {
@@ -73,7 +68,6 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding: $medium-padding;
         background-color: var(--stopwatch-strip-brush);
     }
 }

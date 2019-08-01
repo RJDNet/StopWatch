@@ -4,6 +4,7 @@ import StopWatch from '../../StopWatch/Components/StopWatch';
 import { actionCreators } from '../Store/StopWatchStateBundle';
 import { IState } from '../../State/IState';
 import { getStopWatchList } from '../Store/Selectors';
+const { Zoom } = require('react-reveal');
 
 interface IRawProps {
 	dispatch(action: {}): any;
@@ -25,7 +26,7 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 
 	const DEFAULT_CLASSNAME: string = 'stopwatches-container';
 	const HEADER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__header`;
-	const COUNTER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__counter`;
+	const AMOUNT_CLASSNAME: string = `${DEFAULT_CLASSNAME}__amount`;
 	const BUTTON_CONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__button-container`;
 	const BUTTON_CONTAINER_ADD_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__add-button`;
 	const BUTTON_CONTAINER_ADDX_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__addx-button`;
@@ -36,11 +37,13 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 	
 	const watches: React.ReactElement[] = stopWatchList.map((k) => {		
 		return (
-			<StopWatch
-				className={STOPWATCH_CLASSNAME} 
-				key={k}
-				id={k}
-			/>
+			<Zoom>
+				<StopWatch
+					className={STOPWATCH_CLASSNAME} 
+					key={k}
+					id={k}
+				/>
+			</Zoom>
 		);
 	});
 
@@ -60,7 +63,7 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 	return (
 		<div className={DEFAULT_CLASSNAME}>
 			<h1 className={HEADER_CLASSNAME}>Stopwatch App</h1>
-			<p className={COUNTER_CLASSNAME}>Stopwatch Count: {stopWatchList.length}</p>
+			<p className={AMOUNT_CLASSNAME}>Stopwatch Amount: {stopWatchList.length}</p>
 			<div className={BUTTON_CONTAINER_CLASSNAME}>
 				<button className={BUTTON_CONTAINER_ADD_BUTTON_CLASSNAME} onClick={addStopWatch}>ADD ONE</button>
 				<button className={BUTTON_CONTAINER_REMOVE_BUTTON_CLASSNAME} onClick={removeAllStopWatches}>REMOVE ALL</button>
