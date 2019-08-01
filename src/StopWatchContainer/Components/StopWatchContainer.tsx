@@ -42,7 +42,6 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 			<Zoom key={k}>
 				<StopWatch
 					className={STOPWATCH_CLASSNAME} 
-					key={k}
 					id={k}
 				/>
 			</Zoom>
@@ -62,6 +61,7 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 		dispatch(actionCreators.removeAllWatches());
 	}
 
+	// Could create re-usable button component
 	return (
 		<div className={DEFAULT_CLASSNAME}>
 			<h1 className={HEADER_CLASSNAME}>Stopwatch App</h1>
