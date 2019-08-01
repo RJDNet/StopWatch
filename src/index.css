@@ -96,6 +96,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 30px;
 }
 
 .stopwatch > .stopwatch__startstop-button, .stopwatch > .stopwatch__startstop-button--start, .stopwatch > .stopwatch__startstop-button--stop, .stopwatch > .stopwatch__reset-button, .stopwatch > .stopwatch__remove-button {
