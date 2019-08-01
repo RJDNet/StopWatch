@@ -19,7 +19,7 @@ body {
   padding: 0px;
 }
 
-.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {
   height: 35px;
   width: 80px;
   margin: 5px;
@@ -33,7 +33,7 @@ body {
   cursor: pointer;
 }
 
-.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button:active, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button:active, .stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button:active {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button:active, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button:active, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button:active {
   -webkit-box-shadow: 2px 2px #666;
           box-shadow: 2px 2px #666;
   -webkit-transform: translateY(2px);
@@ -52,13 +52,13 @@ body {
   background-color: white;
 }
 
-.stopwatches-container > .stopwatches-container__amount {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__amount {
   margin: 0px;
   padding: 0px;
   text-align: center;
 }
 
-.stopwatches-container > .stopwatches-container__button-container {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,22 +72,22 @@ body {
           box-sizing: border-box;
 }
 
-.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button {
   background-color: var(--stopwatch-container-add-button-brush);
 }
 
-.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button {
   background-color: var(--stopwatch-container-add-button-brush);
 }
 
-.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__amount-input {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__amount-input {
   width: 120px;
   padding: 5px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.7em;
 }
 
-.stopwatches-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {
   background-color: var(--stopwatch-container-removeall-button-brush);
 }
 
@@ -100,7 +100,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: var(--stopwatch-strip-brush);
 }
 
 .stopwatch > .stopwatch__startstop-button, .stopwatch > .stopwatch__startstop-button--start, .stopwatch > .stopwatch__startstop-button--stop, .stopwatch > .stopwatch__reset-button, .stopwatch > .stopwatch__remove-button {

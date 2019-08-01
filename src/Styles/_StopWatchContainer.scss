@@ -27,40 +27,42 @@
         background-color: white;
     }
 
-    & > .stopwatches-container__amount {
-        margin: 0px;
-        padding: 0px;
-        text-align: center;
-    }
-
-    & > .stopwatches-container__button-container {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin: 0px auto;
-        padding: $small-padding / 2;
-        box-sizing: border-box;
-
-        & > .stopwatches-container__button-container__add-button {
-            @extend %containerButton;
-            background-color: var(--stopwatch-container-add-button-brush);
+    & > .stopwatches-container__controls-container {
+        & > .stopwatches-container__amount {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
         }
-
-        & > .stopwatches-container__button-container__addx-button {
-            @extend %containerButton;
-            background-color: var(--stopwatch-container-add-button-brush);
-        }
-
-        & > .stopwatches-container__button-container__amount-input {
-            width: 120px;
+    
+        & > .stopwatches-container__button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 0px auto;
             padding: $small-padding / 2;
-            font-family: $font-family;
-            font-size: 0.7em;
-        }
-
-        & > .stopwatches-container__button-container__removeall-button {
-            @extend %containerButton;
-            background-color: var(--stopwatch-container-removeall-button-brush);
+            box-sizing: border-box;
+    
+            & > .stopwatches-container__button-container__add-button {
+                @extend %containerButton;
+                background-color: var(--stopwatch-container-add-button-brush);
+            }
+    
+            & > .stopwatches-container__button-container__addx-button {
+                @extend %containerButton;
+                background-color: var(--stopwatch-container-add-button-brush);
+            }
+    
+            & > .stopwatches-container__button-container__amount-input {
+                width: 120px;
+                padding: $small-padding / 2;
+                font-family: $font-family;
+                font-size: 0.7em;
+            }
+    
+            & > .stopwatches-container__button-container__removeall-button {
+                @extend %containerButton;
+                background-color: var(--stopwatch-container-removeall-button-brush);
+            }
         }
     }
 
@@ -68,6 +70,5 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        background-color: var(--stopwatch-strip-brush);
     }
 }

@@ -9,7 +9,7 @@ import { getStopWatch } from '../../StopWatchContainer/Store/Selectors';
 import classNames from 'classnames';
 
 interface IRawProps {
-	dispatch(action: {}): any;
+	dispatch(action: {}): void;
 }
 
 interface IStoreProps {

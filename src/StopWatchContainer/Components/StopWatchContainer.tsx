@@ -4,10 +4,11 @@ import StopWatch from '../../StopWatch/Components/StopWatch';
 import { actionCreators } from '../Store/StopWatchStateBundle';
 import { IState } from '../../State/IState';
 import { getStopWatchList } from '../Store/Selectors';
+// No Types
 const { Zoom } = require('react-reveal');
 
 interface IRawProps {
-	dispatch(action: {}): any;
+	dispatch(action: {}): void;
 }
 
 interface IStoreProps {
@@ -26,6 +27,7 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 
 	const DEFAULT_CLASSNAME: string = 'stopwatches-container';
 	const HEADER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__header`;
+	const CONTROLS_CONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__controls-container`;
 	const AMOUNT_CLASSNAME: string = `${DEFAULT_CLASSNAME}__amount`;
 	const BUTTON_CONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__button-container`;
 	const BUTTON_CONTAINER_ADD_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__add-button`;
@@ -63,14 +65,16 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 	return (
 		<div className={DEFAULT_CLASSNAME}>
 			<h1 className={HEADER_CLASSNAME}>Stopwatch App</h1>
-			<p className={AMOUNT_CLASSNAME}>Stopwatch Amount: {stopWatchList.length}</p>
-			<div className={BUTTON_CONTAINER_CLASSNAME}>
-				<button className={BUTTON_CONTAINER_ADD_BUTTON_CLASSNAME} onClick={addStopWatch}>ADD ONE</button>
-				<button className={BUTTON_CONTAINER_REMOVE_BUTTON_CLASSNAME} onClick={removeAllStopWatches}>REMOVE ALL</button>
-			</div>
-			<div className={BUTTON_CONTAINER_CLASSNAME}>
-				<input className={BUTTON_CONTAINER_AMOUNT_INPUT_CLASSNAME} type='number' placeholder='Enter X Amount...' value={amount} onChange={e => setAmount(e.target.value)}></input>
-				<button className={BUTTON_CONTAINER_ADDX_BUTTON_CLASSNAME} onClick={addXStopWatch}>ADD X</button>
+			<div className={CONTROLS_CONTAINER_CLASSNAME}>
+				<p className={AMOUNT_CLASSNAME}>Stopwatch Amount: {stopWatchList.length}</p>
+				<div className={BUTTON_CONTAINER_CLASSNAME}>
+					<button className={BUTTON_CONTAINER_ADD_BUTTON_CLASSNAME} onClick={addStopWatch}>ADD ONE</button>
+					<button className={BUTTON_CONTAINER_REMOVE_BUTTON_CLASSNAME} onClick={removeAllStopWatches}>REMOVE ALL</button>
+				</div>
+				<div className={BUTTON_CONTAINER_CLASSNAME}>
+					<input className={BUTTON_CONTAINER_AMOUNT_INPUT_CLASSNAME} type='number' placeholder='Enter X Amount...' value={amount} onChange={e => setAmount(e.target.value)}></input>
+					<button className={BUTTON_CONTAINER_ADDX_BUTTON_CLASSNAME} onClick={addXStopWatch}>ADD X</button>
+				</div>
 			</div>
 			<div className={STOPWATCH_FLEXCONTAINER_CLASSNAME}>
 				{
