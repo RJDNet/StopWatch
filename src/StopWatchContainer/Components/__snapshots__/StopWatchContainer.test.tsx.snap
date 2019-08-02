@@ -9,44 +9,48 @@ exports[`StopWatchContainer Component StopWatch renders correctly with all props
   >
     Stopwatch App
   </h1>
-  <p
-    className="stopwatches-container__amount"
-  >
-    Stopwatch Amount: 
-    0
-  </p>
   <div
-    className="stopwatches-container__button-container"
+    className="stopwatches-container__controls-container"
   >
-    <button
-      className="stopwatches-container__button-container__add-button"
-      onClick={[Function]}
+    <p
+      className="stopwatches-container__amount"
     >
-      ADD ONE
-    </button>
-    <button
-      className="stopwatches-container__button-container__removeall-button"
-      onClick={[Function]}
+      Stopwatch Amount: 
+      0
+    </p>
+    <div
+      className="stopwatches-container__button-container"
     >
-      REMOVE ALL
-    </button>
-  </div>
-  <div
-    className="stopwatches-container__button-container"
-  >
-    <input
-      className="stopwatches-container__button-container__amount-input"
-      onChange={[Function]}
-      placeholder="Enter X Amount..."
-      type="number"
-      value=""
-    />
-    <button
-      className="stopwatches-container__button-container__addx-button"
-      onClick={[Function]}
+      <button
+        className="stopwatches-container__button-container__add-button"
+        onClick={[Function]}
+      >
+        ADD ONE
+      </button>
+      <button
+        className="stopwatches-container__button-container__removeall-button"
+        onClick={[Function]}
+      >
+        REMOVE ALL
+      </button>
+    </div>
+    <div
+      className="stopwatches-container__button-container"
     >
-      ADD X
-    </button>
+      <input
+        className="stopwatches-container__button-container__amount-input"
+        onChange={[Function]}
+        placeholder="Enter X Amount..."
+        type="number"
+        value=""
+      />
+      <button
+        className="stopwatches-container__button-container__addx-button"
+        onClick={[Function]}
+      >
+        ADD X
+      </button>
+    </div>
   </div>
   <div
     className="stopwatches-container__stopwatch-flexcontainer"
