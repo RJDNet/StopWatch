@@ -20,15 +20,16 @@
     display: block;
     margin: $small-margin;
     padding: $small-padding;
-    border: 1px solid var(--stopwatch-border-brush);
-    border-radius: 6px;
+    border: 5px solid var(--stopwatch-border-brush);
+    border-radius: 4px;
+    box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
     background-color: var(--stopwatch-brush);
     font-family: $font-family;
 
     & > .stopwatch__timer {
         margin: $small-margin;
         padding: $small-padding / 3;
-        font-size: 1.5em;
+        font-size: 1.6em;
         text-align: center;
         color: white;
         background-color: black;

@@ -39,7 +39,7 @@ exports[`StopWatchContainer Component StopWatch renders correctly with all props
         <button
           className="stopwatches-container__button-container__dropdown-container__dropdown-button"
         >
-          Filter By ▼
+          Filter All ▼
         </button>
         <div
           className="stopwatches-container__button-container__dropdown-container__dropdown-content"
@@ -52,12 +52,12 @@ exports[`StopWatchContainer Component StopWatch renders correctly with all props
           <span
             onClick={[Function]}
           >
-            Running
+            Only Running
           </span>
           <span
             onClick={[Function]}
           >
-            Not Running
+            Only Not Running
           </span>
         </div>
       </div>

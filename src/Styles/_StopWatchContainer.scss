@@ -28,6 +28,8 @@
     }
 
     & > .stopwatches-container__controls-container {
+        margin-top: $small-margin * 2;
+
         & > .stopwatches-container__amount {
             margin: 0px;
             padding: 0px;
@@ -116,5 +118,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        min-height: 150px;
+        margin-top: $small-margin * 2;
+        padding: $small-padding;
     }
 }
