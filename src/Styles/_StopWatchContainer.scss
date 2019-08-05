@@ -24,7 +24,6 @@
         margin: 0px;
         padding: $small-padding;
         text-align: center;
-        background-color: white;
     }
 
     & > .stopwatches-container__controls-container {
@@ -111,8 +110,9 @@
                         cursor: pointer;
                         
                         &:hover {
-                            padding-left: 28px;
+                            padding-left: 24px;
                             background-color: var(--filter-span-hover-brush);
+                            transition: linear 0.15s
                         }
                     }
 

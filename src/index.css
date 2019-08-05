@@ -55,7 +55,6 @@ body {
   margin: 0px;
   padding: 10px;
   text-align: center;
-  background-color: white;
 }
 
 .stopwatches-container > .stopwatches-container__controls-container {
@@ -153,8 +152,10 @@ body {
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-content > span:hover {
-  padding-left: 28px;
+  padding-left: 24px;
   background-color: var(--filter-span-hover-brush);
+  -webkit-transition: linear 0.15s;
+  transition: linear 0.15s;
 }
 
 .stopwatches-container > .stopwatches-container__stopwatch-flexcontainer {
