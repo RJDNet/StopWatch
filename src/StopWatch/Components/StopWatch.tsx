@@ -19,6 +19,7 @@ interface IStoreProps {
 interface IMapProps {
   className: string;
   id: string;
+  runningFilter: string;
 }
 
 type IComponentProps = IRawProps & IStoreProps & IMapProps;
@@ -30,7 +31,8 @@ export const StopWatch: React.FC<IComponentProps> = (props): JSX.Element => {
     dispatch,
     className,
     stopWatch,
-    id
+    id,
+    runningFilter
   } = props;
 
   React.useEffect(() => {
@@ -69,9 +71,28 @@ export const StopWatch: React.FC<IComponentProps> = (props): JSX.Element => {
   const STARTSTOP_BUTTON_CLASSNAME: string = `${DEFAULT_CLASSNAME}__startstop-button`;
   const RESET_CLASSNAME: string = `${DEFAULT_CLASSNAME}__reset-button`;
   const REMOVE_CLASSNAME: string = `${DEFAULT_CLASSNAME}__remove-button`;
+
+  const filterVisibility = (): string => {
+    switch(runningFilter) {
+      case 'All':
+        return DEFAULT_CLASSNAME;
+      case 'Running': 
+        return classNames(DEFAULT_CLASSNAME, {
+          [`${DEFAULT_CLASSNAME}--visible`]: running,
+          [`${DEFAULT_CLASSNAME}--notvisible`]: !running
+        });
+      case 'NotRunning': 
+        return classNames(DEFAULT_CLASSNAME, {
+          [`${DEFAULT_CLASSNAME}--visible`]: !running,
+          [`${DEFAULT_CLASSNAME}--notvisible`]: running
+        });
+      default:
+        return DEFAULT_CLASSNAME;
+      }
+    }
   
-  const rootClasses: string = classNames(DEFAULT_CLASSNAME, className);
-  
+  const rootClasses: string = classNames(filterVisibility(), className);
+      
   const buttonStartStop = (): string => {
     return classNames(STARTSTOP_BUTTON_CLASSNAME, {
         [`${STARTSTOP_BUTTON_CLASSNAME}--start`]: !running,
@@ -80,7 +101,7 @@ export const StopWatch: React.FC<IComponentProps> = (props): JSX.Element => {
   }
   
   return (
-    <div className={rootClasses}>
+    <div className={classNames(rootClasses)}>
       <p className={TIMER_CLASSNAME}>{minutes}:{secondsFormatted}</p>
       <button className={buttonStartStop()} onClick={onClickStopStart}>{btnTitle}</button>
       <button className={RESET_CLASSNAME} onClick={onClickReset}>RESET</button>

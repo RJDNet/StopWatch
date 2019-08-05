@@ -1,5 +1,6 @@
 :root {
   --stopwatch-container-add-button-brush: green;
+  --stopwatch-container-dropdown-button-brush: green;
   --stopwatch-container-removeall-button-brush: red;
   --stopwatch-container-removeall-button-text-brush: white;
   --stopwatch-strip-brush: darkgray;
@@ -19,7 +20,7 @@ body {
   padding: 0px;
 }
 
-.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-button {
   height: 35px;
   width: 80px;
   margin: 5px;
@@ -33,7 +34,7 @@ body {
   cursor: pointer;
 }
 
-.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button:active, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button:active, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button:active {
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__add-button:active, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__addx-button:active, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__removeall-button:active, .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-button:active {
   -webkit-box-shadow: 2px 2px #666;
           box-shadow: 2px 2px #666;
   -webkit-transform: translateY(2px);
@@ -91,6 +92,42 @@ body {
   background-color: var(--stopwatch-container-removeall-button-brush);
 }
 
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container:hover .stopwatches-container__button-container__dropdown-container__dropdown-content {
+  display: block;
+  border: 1px solid gray;
+}
+
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-button {
+  background-color: var(--stopwatch-container-dropdown-button-brush);
+}
+
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-content > span {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-content > span:hover {
+  background-color: lightgray;
+}
+
 .stopwatches-container > .stopwatches-container__stopwatch-flexcontainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -124,6 +161,7 @@ body {
 }
 
 .stopwatch {
+  display: block;
   margin: 10px;
   padding: 10px;
   border: 1px solid var(--stopwatch-border-brush);
@@ -155,5 +193,13 @@ body {
 
 .stopwatch > .stopwatch__remove-button {
   background-color: var(--stopwatch-button-remove-brush);
+}
+
+.stopwatch--visible {
+  display: block;
+}
+
+.stopwatch--notvisible {
+  display: none;
 }
 /*# sourceMappingURL=index.css.map */

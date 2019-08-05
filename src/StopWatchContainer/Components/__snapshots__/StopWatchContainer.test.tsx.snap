@@ -33,6 +33,34 @@ exports[`StopWatchContainer Component StopWatch renders correctly with all props
       >
         REMOVE ALL
       </button>
+      <div
+        className="stopwatches-container__button-container__dropdown-container"
+      >
+        <button
+          className="stopwatches-container__button-container__dropdown-container__dropdown-button"
+        >
+          Filter By ▼
+        </button>
+        <div
+          className="stopwatches-container__button-container__dropdown-container__dropdown-content"
+        >
+          <span
+            onClick={[Function]}
+          >
+            All
+          </span>
+          <span
+            onClick={[Function]}
+          >
+            Running
+          </span>
+          <span
+            onClick={[Function]}
+          >
+            Not Running
+          </span>
+        </div>
+      </div>
     </div>
     <div
       className="stopwatches-container__button-container"

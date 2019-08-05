@@ -17,6 +17,7 @@
 }
 
 .stopwatch {
+    display: block;
     margin: $small-margin;
     padding: $small-padding;
     border: 1px solid var(--stopwatch-border-brush);
@@ -56,4 +57,12 @@
         @extend %stopwatchButton;
         background-color: var(--stopwatch-button-remove-brush);
     }
+}
+
+.stopwatch--visible {
+    display: block;
+}
+
+.stopwatch--notvisible {
+    display: none;
 }

@@ -72,7 +72,7 @@ export type Actions = IAddStopWatch |
     IStartStopWatch |
     IStopStopWatch |
     ITickStopWatch |
-    IResetStopWatch;
+    IResetStopWatch
 
 // Action Creators
 export const actionCreators = {
@@ -165,13 +165,15 @@ export interface IStopWatchMap {
 export interface IStopWatchState {
     stopWatches: IStopWatchMap;
     stopWatchList: string[];
+    filteredList: string[];
 }
 
 // Default value of store
 export function getInitialStopWatchState(): Readonly<IStopWatchState> {
     const state: Readonly<IStopWatchState> = {
         stopWatches: {},
-        stopWatchList: []
+        stopWatchList: [],
+        filteredList: []
     }
 
     return state;
@@ -191,7 +193,8 @@ export function addWatch(state: IStopWatchState): IStopWatchState {
                 key
             }
         },
-        stopWatchList: [...state.stopWatchList, key]
+        stopWatchList: [...state.stopWatchList, key],
+        filteredList: [...state.stopWatchList, key]
     }
 
     return update;
@@ -213,7 +216,8 @@ export function addXWatch(state: IStopWatchState, action: IAddXStopWatch): IStop
                     key
                 }
             },
-            stopWatchList: [...update.stopWatchList, key]
+            stopWatchList: [...update.stopWatchList, key],
+            filteredList: [...update.stopWatchList, key]
         }
 
         update = newUpdate;
@@ -226,7 +230,8 @@ function removeAllWatches(state: IStopWatchState): IStopWatchState {
     const update: IStopWatchState = {
         ...state,
         stopWatches: {},
-        stopWatchList: []
+        stopWatchList: [],
+        filteredList: []
     }
 
     return update;
@@ -244,7 +249,8 @@ function removeWatch(state: IStopWatchState, action: IRemoveStopWatch): IStopWat
         stopWatches: {
             ...delKey.stopWatches
         },
-        stopWatchList: state.stopWatchList.filter(f => f !== key)
+        stopWatchList: state.stopWatchList.filter(f => f !== key),
+        filteredList: state.stopWatchList.filter(f => f !== key)
     }
 
     return update;

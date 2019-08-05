@@ -18,7 +18,8 @@ describe('selectors', () => {
         const update: IState = {
             stopWatchState: {
                 stopWatches: {},
-                stopWatchList: [key]
+                stopWatchList: [key],
+                filteredList: [key]
             }
         }
 
@@ -26,7 +27,7 @@ describe('selectors', () => {
         const gotFilledList = getStopWatchList(update);
 
         expect(gotList).toEqual(mockEmptyList);
-        expect(gotFilledList).toEqual(update.stopWatchState.stopWatchList);
+        expect(gotFilledList).toEqual(update.stopWatchState.filteredList);
         expect(gotList.length).toBe(0);
         expect(gotFilledList.length).toBe(1);
     });
@@ -42,7 +43,8 @@ describe('selectors', () => {
                         key: id
                     }
                 },
-                stopWatchList: [id]
+                stopWatchList: [id],
+                filteredList: [id]
             }
         }
         const gotStopWatch = getStopWatch(id, update);
