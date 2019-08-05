@@ -31,7 +31,7 @@
         padding: $small-padding / 3;
         font-size: 1.6em;
         text-align: center;
-        color: white;
+        color: var(--stopwatch-container-font-color-light-brush);
         background-color: black;
     }
 
@@ -51,7 +51,7 @@
 
     & > .stopwatch__reset-button {
         @extend %stopwatchButton;
-        color: black;
+        color: var(--stopwatch-container-font-color-dark-brush);
     }
 
     & > .stopwatch__remove-button {

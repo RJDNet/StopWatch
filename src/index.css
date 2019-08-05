@@ -1,9 +1,13 @@
 :root {
+  --stopwatch-container-font-color-dark-brush: black;
+  --stopwatch-container-font-color-light-brush: white;
   --stopwatch-container-add-button-brush: green;
   --stopwatch-container-dropdown-button-brush: none;
   --stopwatch-container-removeall-button-brush: red;
   --stopwatch-container-removeall-button-text-brush: white;
   --stopwatch-container-flex-container-brush: gray;
+  --filter-span-hover-brush: lightgray;
+  --filter-button-content-hover-border-brush: gray;
   --stopwatch-strip-brush: darkgray;
   --stopwatch-brush: white;
   --stopwatch-border-brush: lightgray;
@@ -107,41 +111,50 @@ body {
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container:hover .stopwatches-container__button-container__dropdown-container__dropdown-content {
   display: block;
-  border: 1px solid gray;
+  border: 1px solid var(--filter-button-content-hover-border-brush);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-button {
   width: 140px;
   margin: 0px;
+  border: 2px solid transparent;
   -webkit-box-shadow: 0px 0px 0px 0px;
           box-shadow: 0px 0px 0px 0px;
-  border: 2px solid transparent;
-  color: black;
-  font-size: 0.8em;
+  font-size: 0.78em;
+  color: var(--stopwatch-container-font-color-dark-brush);
   background-color: var(--stopwatch-container-dropdown-button-brush);
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-content {
-  display: none;
   position: absolute;
+  min-width: 180px;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 8px 16px 0px var(--stopwatch-button-boxshadow-brush);
+          box-shadow: 0px 8px 16px 0px var(--stopwatch-button-boxshadow-brush);
   background-color: #f9f9f9;
-  min-width: 160px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
   z-index: 1;
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-content > span {
   display: block;
-  padding: 10px 10px;
+  padding: 10px 20px;
   font-size: 12px;
   text-decoration: none;
-  color: black;
+  color: var(--stopwatch-container-font-color-dark-brush);
   cursor: pointer;
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-content > span:hover {
-  background-color: lightgray;
+  padding-left: 28px;
+  background-color: var(--filter-span-hover-brush);
 }
 
 .stopwatches-container > .stopwatches-container__stopwatch-flexcontainer {
@@ -196,7 +209,7 @@ body {
   padding: 3.33333px;
   font-size: 1.6em;
   text-align: center;
-  color: white;
+  color: var(--stopwatch-container-font-color-light-brush);
   background-color: black;
 }
 
@@ -209,7 +222,7 @@ body {
 }
 
 .stopwatch > .stopwatch__reset-button {
-  color: black;
+  color: var(--stopwatch-container-font-color-dark-brush);
 }
 
 .stopwatch > .stopwatch__remove-button {
