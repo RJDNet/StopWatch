@@ -40,7 +40,7 @@ export const StopWatch: React.FC<IComponentProps> = (props): JSX.Element => {
       if(stopWatch && stopWatch.running) {
         dispatch(actionCreators.tickWatch(id));
       }
-      }, 1000);
+    }, 1000);
     return () => {
       clearInterval(timer1);
     }
@@ -81,7 +81,7 @@ export const StopWatch: React.FC<IComponentProps> = (props): JSX.Element => {
           [`${DEFAULT_CLASSNAME}--visible`]: running,
           [`${DEFAULT_CLASSNAME}--notvisible`]: !running
         });
-      case 'NotRunning': 
+      case 'Not Running': 
         return classNames(DEFAULT_CLASSNAME, {
           [`${DEFAULT_CLASSNAME}--visible`]: !running,
           [`${DEFAULT_CLASSNAME}--notvisible`]: running

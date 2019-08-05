@@ -24,7 +24,7 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 	} = props;
 
 	const [amount, setAmount] = React.useState('');
-	const [visible, setVisible] = React.useState('');
+	const [visible, setVisible] = React.useState('All');
 
 	// Defaults
 	const DEFAULT_CLASSNAME: string = 'stopwatches-container';
@@ -87,11 +87,11 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 					<button className={ADD_BUTTON_CLASSNAME} onClick={addStopWatch}>ADD ONE</button>
 					<button className={REMOVE_BUTTON_CLASSNAME} onClick={removeAllStopWatches}>REMOVE ALL</button>
 					<div className={DROPDOWN_CONTAINER_CLASSNAME}>
-						<button className={DROPDOWN_BUTTON_CLASSNAME}>Filter By ▼</button>
+						<button className={DROPDOWN_BUTTON_CLASSNAME}>{`Filter ${visible} ▼`}</button>
 						<div className={DROPDOWN_CONTENT_CLASSNAME}>
 							<span onClick={() => filterStopWatches('All')}>All</span>
-							<span onClick={() => filterStopWatches('Running')}>Running</span>
-							<span onClick={() => filterStopWatches('NotRunning')}>Not Running</span>
+							<span onClick={() => filterStopWatches('Running')}>Only Running</span>
+							<span onClick={() => filterStopWatches('Not Running')}>Only Not Running</span>
 						</div>
 					</div>
 				</div>

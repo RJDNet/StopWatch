@@ -1,6 +1,6 @@
 :root {
   --stopwatch-container-add-button-brush: green;
-  --stopwatch-container-dropdown-button-brush: green;
+  --stopwatch-container-dropdown-button-brush: none;
   --stopwatch-container-removeall-button-brush: red;
   --stopwatch-container-removeall-button-text-brush: white;
   --stopwatch-strip-brush: darkgray;
@@ -26,7 +26,7 @@ body {
   margin: 5px;
   padding: 5px;
   border: 2px solid transparent;
-  border-radius: 6px;
+  border-radius: 4px;
   -webkit-box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
           box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
   color: var(--stopwatch-container-removeall-button-text-brush);
@@ -56,6 +56,7 @@ body {
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__amount {
   margin: 0px;
   padding: 0px;
+  font-size: 0.8em;
   text-align: center;
 }
 
@@ -93,8 +94,10 @@ body {
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container {
-  position: relative;
-  display: inline-block;
+  margin: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container:hover .stopwatches-container__button-container__dropdown-container__dropdown-content {
@@ -103,6 +106,13 @@ body {
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-button {
+  width: 140px;
+  margin: 0px;
+  -webkit-box-shadow: 0px 0px 0px 0px;
+          box-shadow: 0px 0px 0px 0px;
+  border: 2px solid transparent;
+  color: black;
+  font-size: 0.8em;
   background-color: var(--stopwatch-container-dropdown-button-brush);
 }
 
@@ -117,10 +127,11 @@ body {
 }
 
 .stopwatches-container > .stopwatches-container__controls-container > .stopwatches-container__button-container > .stopwatches-container__button-container__dropdown-container > .stopwatches-container__button-container__dropdown-container__dropdown-content > span {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
   display: block;
+  padding: 10px 10px;
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
   cursor: pointer;
 }
 

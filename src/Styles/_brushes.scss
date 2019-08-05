@@ -1,7 +1,7 @@
 :root {
     // Stopwatch Container
     --stopwatch-container-add-button-brush: green;
-    --stopwatch-container-dropdown-button-brush: green;
+    --stopwatch-container-dropdown-button-brush: none;
     --stopwatch-container-removeall-button-brush: red;
     --stopwatch-container-removeall-button-text-brush: white;
 
@@ -10,7 +10,7 @@
     --stopwatch-brush: white;
     --stopwatch-border-brush: gray;
 
-    // stopwatch buttons
+    // Stopwatch Buttons
     --stopwatch-button-boxshadow-brush: darkgray;
     --stopwatch-button-text-brush: white;
     --stopwatch-button-hover-brush: gray;
