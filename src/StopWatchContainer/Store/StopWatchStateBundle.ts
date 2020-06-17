@@ -1,5 +1,4 @@
-import { IRemoveStopWatch } from './StopWatchStateBundle';
-import uuidv1 from 'uuid/v1';
+import { v1 as v4 } from 'uuid';
 
 // Action Types
 export enum ActionTypes {
@@ -80,7 +79,7 @@ export const actionCreators = {
         const action: IAddStopWatch = {
             type: ActionTypes.ADD_STOPWATCH
         }
-        
+
         return action;
     },
     addXWatch(amount: number): IAddXStopWatch {
@@ -90,14 +89,14 @@ export const actionCreators = {
                 amount
             }
         }
-        
+
         return action;
     },
     removeAllWatches(): IRemoveAllStopWatch {
         const action: IRemoveAllStopWatch = {
             type: ActionTypes.REMOVEALL_STOPWATCH
         }
-        
+
         return action;
     },
     removeWatch(key: string): IRemoveStopWatch {
@@ -107,7 +106,7 @@ export const actionCreators = {
                 key
             }
         }
-        
+
         return action;
     },
     startWatch(key: string): IStartStopWatch {
@@ -117,7 +116,7 @@ export const actionCreators = {
                 key
             }
         }
-        
+
         return action;
     },
     stopWatch(key: string): IStopStopWatch {
@@ -127,7 +126,7 @@ export const actionCreators = {
                 key
             }
         }
-            
+
         return action;
     },
     tickWatch(key: string): ITickStopWatch {
@@ -137,7 +136,7 @@ export const actionCreators = {
                 key
             }
         }
-            
+
         return action;
     },
     resetWatch(key: string): IResetStopWatch {
@@ -147,7 +146,7 @@ export const actionCreators = {
                 key
             }
         }
-        
+
         return action;
     }
 }
@@ -181,7 +180,8 @@ export function getInitialStopWatchState(): Readonly<IStopWatchState> {
 
 // Sub Reducers
 export function addWatch(state: IStopWatchState): IStopWatchState {
-    const key: string = uuidv1();
+    const key: string = v4();
+    console.log(key);
 
     const update: IStopWatchState = {
         ...state,
@@ -203,9 +203,11 @@ export function addWatch(state: IStopWatchState): IStopWatchState {
 export function addXWatch(state: IStopWatchState, action: IAddXStopWatch): IStopWatchState {
     const { amount } = action.payload;
     let update = state;
-    
-    for(let i = 1; i <= amount; i++) {
-        const key: string = uuidv1();
+
+    for (let i = 1; i <= amount; i++) {
+        const key: string = v4();
+        console.log(key);
+
         let newUpdate: IStopWatchState = {
             ...update,
             stopWatches: {
@@ -222,7 +224,7 @@ export function addXWatch(state: IStopWatchState, action: IAddXStopWatch): IStop
 
         update = newUpdate;
     }
-    
+
     return update;
 }
 
@@ -305,7 +307,7 @@ function tickWatch(state: IStopWatchState, action: ITickStopWatch): IStopWatchSt
                 }
             }
         }
-    
+
         return update;
     }
 
@@ -331,24 +333,24 @@ function resetWatch(state: IStopWatchState, action: IResetStopWatch): IStopWatch
 }
 
 // Reducer
-export const stopWatchReducer = (state: IStopWatchState = getInitialStopWatchState(), action: Actions ) => {
+export const stopWatchReducer = (state: IStopWatchState = getInitialStopWatchState(), action: Actions) => {
     switch (action.type) {
-      case ActionTypes.ADD_STOPWATCH:
-        return addWatch(state);
-      case ActionTypes.ADDX_STOPWATCH:
-        return addXWatch(state, action);
-      case ActionTypes.REMOVEALL_STOPWATCH:
-        return removeAllWatches(state);
-      case ActionTypes.REMOVE_STOPWATCH:
-        return removeWatch(state, action);
-      case ActionTypes.START_STOPWATCH: 
-        return startWatch(state, action);
-      case ActionTypes.STOP_STOPWATCH: 
-        return stopWatch(state, action);
-      case ActionTypes.TICK_STOPWATCH: 
-        return tickWatch(state, action);
-      case ActionTypes.RESET_STOPWATCH: 
-        return resetWatch(state, action);
-      default: return state;
+        case ActionTypes.ADD_STOPWATCH:
+            return addWatch(state);
+        case ActionTypes.ADDX_STOPWATCH:
+            return addXWatch(state, action);
+        case ActionTypes.REMOVEALL_STOPWATCH:
+            return removeAllWatches(state);
+        case ActionTypes.REMOVE_STOPWATCH:
+            return removeWatch(state, action);
+        case ActionTypes.START_STOPWATCH:
+            return startWatch(state, action);
+        case ActionTypes.STOP_STOPWATCH:
+            return stopWatch(state, action);
+        case ActionTypes.TICK_STOPWATCH:
+            return tickWatch(state, action);
+        case ActionTypes.RESET_STOPWATCH:
+            return resetWatch(state, action);
+        default: return state;
     }
 }
