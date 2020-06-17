@@ -1,0 +1,69 @@
+%stopwatchButton {
+    height: 30px;
+    width: 60px;
+    margin: $small-margin / 2;
+    padding: $small-padding / 2;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
+    color: var(--stopwatch-button-text-brush);
+    font-size: $small-font-size;
+    cursor: pointer;
+
+    &:active {
+        box-shadow: 2px 2px #666;
+        transform: translateY(2px);
+    }
+}
+
+.stopwatch {
+    display: block;
+    margin: $small-margin;
+    padding: $small-padding;
+    border: 5px solid var(--stopwatch-border-brush);
+    border-radius: 4px;
+    box-shadow: 2px 2px var(--stopwatch-button-boxshadow-brush);
+    background-color: var(--stopwatch-brush);
+    font-family: $font-family;
+
+    & > .stopwatch__timer {
+        margin: $small-margin;
+        padding: $small-padding / 3;
+        font-size: 1.6em;
+        text-align: center;
+        color: var(--stopwatch-container-font-color-light-brush);
+        background-color: black;
+    }
+
+    & > .stopwatch__startstop-button {
+        @extend %stopwatchButton;
+    }
+
+    & > .stopwatch__startstop-button--start {
+        @extend %stopwatchButton;   
+        background-color: var(--stopwatch-button-start-brush);
+    }
+
+    & > .stopwatch__startstop-button--stop {
+        @extend %stopwatchButton;
+        background-color: var(--stopwatch-button-stop-brush);
+    }
+
+    & > .stopwatch__reset-button {
+        @extend %stopwatchButton;
+        color: var(--stopwatch-container-font-color-dark-brush);
+    }
+
+    & > .stopwatch__remove-button {
+        @extend %stopwatchButton;
+        background-color: var(--stopwatch-button-remove-brush);
+    }
+}
+
+.stopwatch--visible {
+    display: block;
+}
+
+.stopwatch--notvisible {
+    display: none;
+}

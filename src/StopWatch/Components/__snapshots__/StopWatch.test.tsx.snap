@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StopWatch Component StopWatch renders correctly with all props & no redux store 1`] = `
+<div
+  className="stopwatch stopwatch"
+>
+  <p
+    className="stopwatch__timer"
+  >
+    0
+    :
+    00
+  </p>
+  <button
+    className="stopwatch__startstop-button stopwatch__startstop-button--start"
+    onClick={[Function]}
+  >
+    START
+  </button>
+  <button
+    className="stopwatch__reset-button"
+    onClick={[Function]}
+  >
+    RESET
+  </button>
+  <button
+    className="stopwatch__remove-button"
+    onClick={[Function]}
+  >
+    REMOVE
+  </button>
+</div>
+`;
+
+exports[`StopWatch Component StopWatch renders correctly with id & className props with redux store 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": [Function],
+      },
+    }
+  }
+>
+  <Connect(StopWatch)
+    className="stopwatch"
+    id="testerid"
+  />
+</ContextProvider>
+`;
