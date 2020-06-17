@@ -38,21 +38,21 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 	const ADDX_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__addx-button`;
 	const REMOVE_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__removeall-button`;
 	const AMOUNT_INPUT_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__amount-input`;
-	
+
 	// Dropdown Container
 	const DROPDOWN_CONTAINER_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__dropdown-container`;
 	const DROPDOWN_BUTTON_CLASSNAME: string = `${DROPDOWN_CONTAINER_CLASSNAME}__dropdown-button`;
 	const DROPDOWN_CONTENT_CLASSNAME: string = `${DROPDOWN_CONTAINER_CLASSNAME}__dropdown-content`;
-	
+
 	// StopWatch Flex Container
 	const STOPWATCH_FLEXCONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch-flexcontainer`;
 	const STOPWATCH_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch`;
-	
-	const watches: React.ReactElement[] = stopWatchList.map(k => {		
+
+	const watches: React.ReactElement[] = stopWatchList.map(k => {
 		return (
 			<Zoom key={k}>
 				<StopWatch
-					className={STOPWATCH_CLASSNAME} 
+					className={STOPWATCH_CLASSNAME}
 					id={k}
 					runningFilter={visible}
 				/>
@@ -80,7 +80,7 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 	// Reusable Components? Button Component?
 	return (
 		<div className={DEFAULT_CLASSNAME}>
-			<h1 className={HEADER_CLASSNAME}>Stopwatch App</h1>
+			<h1 className={HEADER_CLASSNAME}>Stopwatch Mania</h1>
 			<div className={CONTROLS_CONTAINER_CLASSNAME}>
 				<p className={AMOUNT_CLASSNAME}>Stopwatch Amount: {stopWatchList.length}</p>
 				<div className={BUTTON_CONTAINER_CLASSNAME}>
@@ -115,6 +115,6 @@ export function mapStateToProps(state: IState): IStoreProps {
 	}
 
 	return props;
-}	
-	
+}
+
 export default connect<IStoreProps, {}, {}, IState>(mapStateToProps)(StopWatchContainer);
