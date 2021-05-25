@@ -7,7 +7,7 @@ exports[`StopWatchContainer Component StopWatch renders correctly with all props
   <h1
     className="stopwatches-container__header"
   >
-    Stopwatch App
+    Stopwatch Mania
   </h1>
   <div
     className="stopwatches-container__controls-container"

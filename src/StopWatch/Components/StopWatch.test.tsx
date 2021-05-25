@@ -5,23 +5,26 @@ import {
   ShallowWrapper 
 } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import ConnectedStopWatch, { 
-  StopWatch, 
-  mapStateToProps 
-} from './StopWatch';
-import uuidv1 from 'uuid/v1';
+import { v1 as uuidv1 } from 'uuid';
+
 import { 
   store, 
   getState 
 } from '../../State/__mocks__/Store';
 import { ActionTypes } from '../../StopWatchContainer/Store/StopWatchStateBundle';
+import ConnectedStopWatch, { 
+  StopWatch, 
+  mapStateToProps 
+} from './StopWatch';
 
 describe('StopWatch Component', () => {
   const key = uuidv1();
   const dispatch = jest.fn();
+
   const props = {
     className: 'stopwatch',
     id: 'testerid',
+    runningFilter: 'All',
     stopWatch: {
       time: 0,
       running: false,
@@ -38,10 +41,10 @@ describe('StopWatch Component', () => {
     expect(toJson(tree)).toMatchSnapshot();
   });
 
-  test('StopWatch renders correctly with id & className props with redux store', () => {
+  test('StopWatch renders correctly with className, id * runningFilter props with redux store', () => {
     const tree: ShallowWrapper = shallow(
       <Provider store={store}>
-        <ConnectedStopWatch className={'stopwatch'} id={'testerid'} />
+        <ConnectedStopWatch className={'stopwatch'} id={'testerid'} runningFilter={'All'} />
       </Provider>
     );
       
@@ -61,13 +64,15 @@ describe('StopWatch Component', () => {
               key: 'testid'
             }
         },    
-        stopWatchList: ['testid']
+        stopWatchList: ['testid'],
+        filteredList: []
       }
     }
     
     const own = {
       className: 'stopwatch',
-      id: 'testid'
+      id: 'testid',
+      runningFilter: 'All'
     }
     
     const result = mapStateToProps(state, own);

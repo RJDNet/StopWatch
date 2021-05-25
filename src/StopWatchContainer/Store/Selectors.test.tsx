@@ -1,14 +1,11 @@
+import { v1 as uuidv1 } from 'uuid';
+
+import { getState } from '../../State/__mocks__/Store';
+import { IState } from '../../State/IState';
 import { 
     getStopWatchList,
     getStopWatch
 } from './Selectors';
-import {
-    getState
-} from '../../State/__mocks__/Store';
-import {
-    IState
-} from '../../State/IState';
-import uuidv1 from 'uuid/v1';
 
 describe('selectors', () => {
     test('getStopWatchList selector returns correct state', () => {

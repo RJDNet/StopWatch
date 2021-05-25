@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import StopWatch from '../../StopWatch/Components/StopWatch';
-import { actionCreators } from '../Store/StopWatchStateBundle';
+
 import { IState } from '../../State/IState';
+import { actionCreators } from '../Store/StopWatchStateBundle';
 import { getStopWatchList } from '../Store/Selectors';
+import StopWatch from '../../StopWatch/Components/StopWatch';
+
 // No Typescript Definitions
 const { Zoom } = require('react-reveal');
 
@@ -17,6 +19,28 @@ interface IStoreProps {
 
 type IComponentProps = IRawProps & IStoreProps;
 
+// Defaults
+const DEFAULT_CLASSNAME: string = 'stopwatches-container';
+const HEADER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__header`;
+const CONTROLS_CONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__controls-container`;
+const AMOUNT_CLASSNAME: string = `${DEFAULT_CLASSNAME}__amount`;
+
+// Button Container
+const BUTTON_CONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__button-container`;
+const ADD_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__add-button`;
+const ADDX_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__addx-button`;
+const REMOVE_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__removeall-button`;
+const AMOUNT_INPUT_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__amount-input`;
+
+// Dropdown Container
+const DROPDOWN_CONTAINER_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__dropdown-container`;
+const DROPDOWN_BUTTON_CLASSNAME: string = `${DROPDOWN_CONTAINER_CLASSNAME}__dropdown-button`;
+const DROPDOWN_CONTENT_CLASSNAME: string = `${DROPDOWN_CONTAINER_CLASSNAME}__dropdown-content`;
+
+// StopWatch Flex Container
+const STOPWATCH_FLEXCONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch-flexcontainer`;
+const STOPWATCH_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch`;
+
 export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Element => {
 	const {
 		dispatch,
@@ -26,27 +50,30 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 	const [amount, setAmount] = React.useState('');
 	const [visible, setVisible] = React.useState('All');
 
-	// Defaults
-	const DEFAULT_CLASSNAME: string = 'stopwatches-container';
-	const HEADER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__header`;
-	const CONTROLS_CONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__controls-container`;
-	const AMOUNT_CLASSNAME: string = `${DEFAULT_CLASSNAME}__amount`;
+	function removeAllStopWatches(): void {
+		dispatch(actionCreators.removeAllWatches());
+	}
 
-	// Button Container
-	const BUTTON_CONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__button-container`;
-	const ADD_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__add-button`;
-	const ADDX_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__addx-button`;
-	const REMOVE_BUTTON_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__removeall-button`;
-	const AMOUNT_INPUT_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__amount-input`;
+	function filterAllStopWatches(): void {
+		setVisible('All');
+	}
 
-	// Dropdown Container
-	const DROPDOWN_CONTAINER_CLASSNAME: string = `${BUTTON_CONTAINER_CLASSNAME}__dropdown-container`;
-	const DROPDOWN_BUTTON_CLASSNAME: string = `${DROPDOWN_CONTAINER_CLASSNAME}__dropdown-button`;
-	const DROPDOWN_CONTENT_CLASSNAME: string = `${DROPDOWN_CONTAINER_CLASSNAME}__dropdown-content`;
+	function filterRunningStopWatches(): void {
+		setVisible('Running');
+	}
 
-	// StopWatch Flex Container
-	const STOPWATCH_FLEXCONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch-flexcontainer`;
-	const STOPWATCH_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch`;
+	function filterNotRunningStopWatches(): void {
+		setVisible('Not Running');
+	}
+
+	function addStopWatch(): void {
+		dispatch(actionCreators.addWatch());
+	}
+
+	function addXStopWatch (): void {
+		dispatch(actionCreators.addXWatch(parseInt(amount)));
+		setAmount('');
+	}
 
 	const watches: React.ReactElement[] = stopWatchList.map(k => {
 		return (
@@ -60,23 +87,6 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 		);
 	});
 
-	const addStopWatch = (): void => {
-		dispatch(actionCreators.addWatch());
-	}
-
-	const addXStopWatch = (): void => {
-		dispatch(actionCreators.addXWatch(parseInt(amount)));
-		setAmount('');
-	}
-
-	const removeAllStopWatches = (): void => {
-		dispatch(actionCreators.removeAllWatches());
-	}
-
-	const filterStopWatches = (set: string): void => {
-		setVisible(set);
-	}
-
 	// Reusable Components? Button Component?
 	return (
 		<div className={DEFAULT_CLASSNAME}>
@@ -89,9 +99,9 @@ export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Elemen
 					<div className={DROPDOWN_CONTAINER_CLASSNAME}>
 						<button className={DROPDOWN_BUTTON_CLASSNAME}>{`Filter ${visible} ▼`}</button>
 						<div className={DROPDOWN_CONTENT_CLASSNAME}>
-							<span onClick={() => filterStopWatches('All')}>All</span>
-							<span onClick={() => filterStopWatches('Running')}>Only Running</span>
-							<span onClick={() => filterStopWatches('Not Running')}>Only Not Running</span>
+							<span onClick={filterAllStopWatches}>All</span>
+							<span onClick={filterRunningStopWatches}>Only Running</span>
+							<span onClick={filterNotRunningStopWatches}>Only Not Running</span>
 						</div>
 					</div>
 				</div>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import StopWatchContainer from './StopWatchContainer/Components/StopWatchContainer';
+
 import { setStore } from './State/Store';
 import { setupStore } from './State/SetupStore';
 import { startRootSaga } from './State/Saga';
+import StopWatchContainer from './StopWatchContainer/Components/StopWatchContainer';
 
 const store: any = setupStore();
 setStore(store);
@@ -17,6 +18,6 @@ const App: React.FC = (): JSX.Element => {
       </Provider>
     </div>
     );
-  }
+}
 
 export default App;

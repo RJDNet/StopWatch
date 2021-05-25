@@ -3,6 +3,7 @@ import {
     SagaMiddleware
 } from 'redux-saga';
 import { all } from 'redux-saga/effects';
+
 import stopWatchContainerRootSaga from '../StopWatchContainer/Sagas/RootSaga';
 import stopWatchRootSaga from '../StopWatch/Sagas/RootSaga';
 

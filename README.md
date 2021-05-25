@@ -1,8 +1,8 @@
 # Stopwatch Mania
 
-Instantiate many stopwatches at the same time and run timers, filter by running or not. 
+Instantiate many stopwatches at the same time, run individual timers, and filter by running or not. 
 
-More of a technical project showing good practices for React optimization around re-rendering, project structure, redux, testing and BEM naming methodology for SASS (CSS).  
+More of a technical project showing good practices for React optimization around re-rendering, project structure, redux, testing, and BEM naming methodology for SASS (CSS).  
 
 ## Description
 

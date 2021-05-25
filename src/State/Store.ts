@@ -6,6 +6,7 @@ import {
 import { IState } from './IState';
 
 export let store: Readonly<Store<IState>>;
+
 export function getState(): Readonly<IState> {
     return store.getState();
 }

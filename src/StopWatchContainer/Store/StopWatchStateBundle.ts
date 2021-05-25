@@ -1,4 +1,4 @@
-import { v4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 // Action Types
 export enum ActionTypes {
@@ -180,7 +180,7 @@ export function getInitialStopWatchState(): Readonly<IStopWatchState> {
 
 // Sub Reducers
 export function addWatch(state: IStopWatchState): IStopWatchState {
-    const key: string = v4();
+    const key: string = uuidv4();
 
     const update: IStopWatchState = {
         ...state,
@@ -204,7 +204,7 @@ export function addXWatch(state: IStopWatchState, action: IAddXStopWatch): IStop
     let update = state;
 
     for (let i = 1; i <= amount; i++) {
-        const key: string = v4();
+        const key: string = uuidv4();
 
         let newUpdate: IStopWatchState = {
             ...update,

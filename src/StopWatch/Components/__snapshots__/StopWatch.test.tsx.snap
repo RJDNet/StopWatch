@@ -32,7 +32,7 @@ exports[`StopWatch Component StopWatch renders correctly with all props & no red
 </div>
 `;
 
-exports[`StopWatch Component StopWatch renders correctly with id & className props with redux store 1`] = `
+exports[`StopWatch Component StopWatch renders correctly with className, id * runningFilter props with redux store 1`] = `
 <ContextProvider
   value={
     Object {
@@ -68,6 +68,7 @@ exports[`StopWatch Component StopWatch renders correctly with id & className pro
   <Connect(StopWatch)
     className="stopwatch"
     id="testerid"
+    runningFilter="All"
   />
 </ContextProvider>
 `;

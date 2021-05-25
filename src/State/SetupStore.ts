@@ -6,6 +6,7 @@ import {
   Store,
   Reducer
 } from 'redux';
+
 import { sagaMiddleware } from './Saga';
 import { IState } from './IState';
 import { initialStoreState } from './InitialState';
@@ -23,6 +24,7 @@ const composeEnhancers: <GenericStoreEnhancer>(f: GenericStoreEnhancer) => Gener
 
 export function setupStore(initialState: IState = initialStoreState()): Readonly<Store<IState>> {
   const reducer: Reducer<{}> = combineReducers(getReducers());
+
   return createStore(
       reducer,
       initialState,

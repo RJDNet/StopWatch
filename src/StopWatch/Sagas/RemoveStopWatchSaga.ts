@@ -1,11 +1,12 @@
-import { 
-    ActionTypes, 
-    IRemoveStopWatch,
-} from '../../StopWatchContainer/Store/StopWatchStateBundle';
 import {
     TakeEffect,
     take
 } from 'redux-saga/effects';
+
+import { 
+    ActionTypes, 
+    IRemoveStopWatch,
+} from '../../StopWatchContainer/Store/StopWatchStateBundle';
 
 export default function* removeStopWatchSaga(): IterableIterator<TakeEffect> {
     while (true) {

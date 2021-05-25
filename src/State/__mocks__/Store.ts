@@ -4,6 +4,7 @@ import {
     combineReducers,
     Reducer
   } from 'redux';
+
 import {
     IStopWatchState,
     getInitialStopWatchState
@@ -21,6 +22,7 @@ export function initialStoreState(): Readonly<IState> {
 
 export function getState(): Readonly<IState> {
     const state: Readonly<IState> = initialStoreState();
+
     return { 
         ...state 
     };
@@ -31,6 +33,7 @@ export const subscribe = jest.fn();
 
 export function setupStore(initialState: IState = getState()): Readonly<Store<IState>> {
     const reducer: Reducer<{}> = combineReducers(getReducers());
+
     return createStore(
         reducer,
         initialState,
@@ -38,12 +41,12 @@ export function setupStore(initialState: IState = getState()): Readonly<Store<IS
     ) as Store<IState>;
 }
   
-//   let store: Readonly<Store<IState>>;
 export function getMockState(): Readonly<IState> {
     return store.getState();
 }
 
 export let store: any = setupStore();
+
 function setStore(storeToSet: Readonly<Store<IState>>): void {
     store = storeToSet;
 }

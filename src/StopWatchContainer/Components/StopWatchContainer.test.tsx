@@ -5,15 +5,16 @@ import {
     ShallowWrapper 
 } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import ConnectedStopWatchContainer, { 
-    StopWatchContainer, 
-    mapStateToProps 
-} from './StopWatchContainer';
+
 import { 
     store,
     getState 
 } from '../../State/__mocks__/Store';
 import { ActionTypes } from '../Store/StopWatchStateBundle';
+import ConnectedStopWatchContainer, { 
+    StopWatchContainer, 
+    mapStateToProps 
+} from './StopWatchContainer';
 
 describe('StopWatchContainer Component', () => {
     const dispatch = jest.fn();

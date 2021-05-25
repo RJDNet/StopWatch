@@ -1,3 +1,4 @@
+import { v1 as uuidv1 } from 'uuid';
 import {  
     getInitialStopWatchState, 
     actionCreators,
@@ -6,7 +7,6 @@ import {
     Actions,
     IStopWatchState 
 } from './StopWatchStateBundle';
-import uuidv1 from 'uuid/v1';
 
 describe('actions', () => {
     test('should create an action to add a stopwatch', () => {
@@ -142,7 +142,7 @@ describe('reducers', () => {
             stopWatches: {
                 ...delKey.stopWatches
             },
-            stopWatchList: state.stopWatchList.filter(f => f != key)
+            stopWatchList: state.stopWatchList.filter(f => f !== key)
         }
 
         expect(update).toEqual(state);
