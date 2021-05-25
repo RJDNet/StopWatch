@@ -41,7 +41,7 @@ const DROPDOWN_CONTENT_CLASSNAME: string = `${DROPDOWN_CONTAINER_CLASSNAME}__dro
 const STOPWATCH_FLEXCONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch-flexcontainer`;
 const STOPWATCH_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch`;
 
-export const StopWatchContainer: React.FC<IComponentProps> = (props): JSX.Element => {
+export function StopWatchContainer(props: IComponentProps): JSX.Element {
 	const {
 		dispatch,
 		stopWatchList
