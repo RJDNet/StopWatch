@@ -1,4 +1,5 @@
 import { v1 as uuidv1 } from 'uuid';
+
 import {  
     getInitialStopWatchState, 
     actionCreators,
@@ -26,7 +27,7 @@ describe('actions', () => {
     });
 
     test('should create an action to remove a stopwatch', () => {
-        const key = uuidv1();
+        const key: string = uuidv1();
         const expectedAction: Actions = {
             type: ActionTypes.REMOVE_STOPWATCH,
             payload: {
@@ -38,7 +39,7 @@ describe('actions', () => {
     });
 
     test('should create an action to start a stopwatch', () => {
-        const key = uuidv1();
+        const key: string = uuidv1();
         const expectedAction: Actions = {
             type: ActionTypes.START_STOPWATCH,
             payload: {
@@ -50,7 +51,7 @@ describe('actions', () => {
     });
 
     test('should create an action to stop a stopwatch', () => {
-        const key = uuidv1();
+        const key: string = uuidv1();
         const expectedAction: Actions = {
             type: ActionTypes.STOP_STOPWATCH,
             payload: {
@@ -62,7 +63,7 @@ describe('actions', () => {
     });
 
     test('should create an action to tick a stopwatch', () => {
-        const key = uuidv1();
+        const key: string = uuidv1();
         const expectedAction: Actions = {
             type: ActionTypes.TICK_STOPWATCH,
             payload: {
@@ -74,7 +75,7 @@ describe('actions', () => {
     });
 
     test('should create an action to reset a stopwatch', () => {
-        const key = uuidv1();
+        const key: string = uuidv1();
         const expectedAction: Actions = {
             type: ActionTypes.RESET_STOPWATCH,
             payload: {
@@ -88,31 +89,30 @@ describe('actions', () => {
 
 describe('reducers', () => {
     test('unknown action returns initial state', () => {
-        const state = getInitialStopWatchState();
+        const state: Readonly<IStopWatchState> = getInitialStopWatchState();
         const expectedAction: any = {
-            type: 'mockAction'
+            type: 'mockUnknownAction'
         }
 
         expect(stopWatchReducer(undefined, expectedAction)).toEqual(state);
     });
 
     test('adding a stopwatch returns as defined', () => {
-        const state = getInitialStopWatchState();
+        const state: Readonly<IStopWatchState> = getInitialStopWatchState();
         const expectedAction: Actions = {
             type: ActionTypes.ADD_STOPWATCH
         }
-        const reducerResult = stopWatchReducer(state, expectedAction);
+        const reducerResult: IStopWatchState = stopWatchReducer(state, expectedAction);
 
         expect(reducerResult).toBeDefined();
         expect(reducerResult.stopWatchList.length).toBe(1);
     });
 
     test('removing all stopwatches returns same value as initial state', () => {
-        const state = getInitialStopWatchState();
+        const state: Readonly<IStopWatchState> = getInitialStopWatchState();
         const expectedAction: Actions = {
             type: ActionTypes.REMOVEALL_STOPWATCH
         }
-
         const update: IStopWatchState = {
             ...state,
             stopWatches: {},
@@ -124,17 +124,18 @@ describe('reducers', () => {
     });
 
     test('removing a stopwatch removes key from state', () => {
-        const key = uuidv1();
-        const state = getInitialStopWatchState();
+        const key: string = uuidv1();
+        const state: Readonly<IStopWatchState> = getInitialStopWatchState();
         const expectedAction: Actions = {
             type: ActionTypes.REMOVE_STOPWATCH,
             payload: {
                 key
             }
         }
-        const delKey = {
+        const delKey: IStopWatchState = {
             ...state
         }
+
         delete delKey.stopWatches[key]
 
         const update: IStopWatchState = {
@@ -150,8 +151,8 @@ describe('reducers', () => {
     });
 
     test('starting a stopwatch returns as defined with correct values', () => {
-        const key = uuidv1();
-        const state = getInitialStopWatchState();
+        const key: string = uuidv1();
+        const state: Readonly<IStopWatchState> = getInitialStopWatchState();
         const expectedAction: Actions = {
             type: ActionTypes.START_STOPWATCH,
             payload: {
@@ -168,7 +169,7 @@ describe('reducers', () => {
                 }
             }
         }
-        const reducerResult = stopWatchReducer(state, expectedAction);
+        const reducerResult: Readonly<IStopWatchState> = stopWatchReducer(state, expectedAction);
 
         expect(reducerResult).toBeDefined();
         expect(Object.keys(reducerResult.stopWatches)[0]).toBe(Object.keys(update.stopWatches)[0]);
@@ -176,8 +177,8 @@ describe('reducers', () => {
     });
 
     test('stoping a stopwatch returns as defined with correct values', () => {
-        const key = uuidv1();
-        const state = getInitialStopWatchState();
+        const key: string = uuidv1();
+        const state: Readonly<IStopWatchState> = getInitialStopWatchState();
         const expectedAction: Actions = {
             type: ActionTypes.STOP_STOPWATCH,
             payload: {
@@ -194,7 +195,7 @@ describe('reducers', () => {
                 }
             }
         }
-        const reducerResult = stopWatchReducer(state, expectedAction);
+        const reducerResult: IStopWatchState = stopWatchReducer(state, expectedAction);
 
         expect(reducerResult).toBeDefined();
         expect(Object.keys(reducerResult.stopWatches)[0]).toBe(Object.keys(update.stopWatches)[0]);
@@ -202,8 +203,8 @@ describe('reducers', () => {
     });
 
     test('ticking a stopwatch returns as defined with correct values', () => {
-        const key = uuidv1();
-        const state = getInitialStopWatchState();
+        const key: string = uuidv1();
+        const state: Readonly<IStopWatchState> = getInitialStopWatchState();
         const expectedAction: Actions = {
             type: ActionTypes.TICK_STOPWATCH,
             payload: {
@@ -222,7 +223,7 @@ describe('reducers', () => {
                 }
             }
         }
-        const reducerResult = stopWatchReducer(update, expectedAction);
+        const reducerResult: IStopWatchState = stopWatchReducer(update, expectedAction);
 
         expect(reducerResult).toBeDefined();
         expect(Object.keys(reducerResult.stopWatches)[0]).toBe(key);
@@ -231,8 +232,8 @@ describe('reducers', () => {
     });
 
     test('reseting a stopwatch returns as defined with correct values', () => {
-        const key = uuidv1();
-        const state = getInitialStopWatchState();
+        const key: string = uuidv1();
+        const state: Readonly<IStopWatchState> = getInitialStopWatchState();
         const expectedAction: Actions = {
             type: ActionTypes.RESET_STOPWATCH,
             payload: {

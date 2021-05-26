@@ -17,13 +17,13 @@ interface IStoreProps {
 	stopWatch: IStopWatch | undefined;
 }
 
-interface IMapProps {
+export interface IMapProps {
   className: string;
   id: string;
   runningFilter: string;
 }
 
-type IComponentProps = IRawProps & IStoreProps & IMapProps;
+export type IStopWatchProps = IRawProps & IStoreProps & IMapProps;
 
 const DEFAULT_CLASSNAME: string = 'stopwatch';
 const TIMER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__timer`;
@@ -31,7 +31,7 @@ const STARTSTOP_BUTTON_CLASSNAME: string = `${DEFAULT_CLASSNAME}__startstop-butt
 const RESET_CLASSNAME: string = `${DEFAULT_CLASSNAME}__reset-button`;
 const REMOVE_CLASSNAME: string = `${DEFAULT_CLASSNAME}__remove-button`;
 
-export function StopWatch(props: IComponentProps): JSX.Element {
+export function StopWatch(props: IStopWatchProps): JSX.Element {
   // Rendering check
   // console.log(`@@@ StopWatch.render id=${props.id}`);
   const { 
@@ -58,9 +58,9 @@ export function StopWatch(props: IComponentProps): JSX.Element {
   const running: boolean = stopWatch !== undefined ? stopWatch.running : false; 
   const btnTitle: string = running ? 'STOP' : 'START';
 
-  const minutes = Math.floor(time / 60);
-  const seconds = time - (minutes * 60);
-  const secondsFormatted = `${seconds < 10 ? '0' : ''}${seconds}`;
+  const minutes: number = Math.floor(time / 60);
+  const seconds: number = time - (minutes * 60);
+  const secondsFormatted: string = `${seconds < 10 ? '0' : ''}${seconds}`;
   
   function filterVisibility(): string {
     switch(runningFilter) {

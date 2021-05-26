@@ -13,12 +13,13 @@ import {
 import { ActionTypes } from '../Store/StopWatchStateBundle';
 import ConnectedStopWatchContainer, { 
     StopWatchContainer, 
-    mapStateToProps 
+    mapStateToProps,
+    IStopWatchContainerProps 
 } from './StopWatchContainer';
 
 describe('StopWatchContainer Component', () => {
     const dispatch = jest.fn();
-    const props = {
+    const props: IStopWatchContainerProps = {
         dispatch,
         stopWatchList: []
     }

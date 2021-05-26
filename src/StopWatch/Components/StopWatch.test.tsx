@@ -11,17 +11,20 @@ import {
   store, 
   getState 
 } from '../../State/__mocks__/Store';
+import { IState } from '../../State/IState';
 import { ActionTypes } from '../../StopWatchContainer/Store/StopWatchStateBundle';
 import ConnectedStopWatch, { 
   StopWatch, 
-  mapStateToProps 
+  mapStateToProps,
+  IStopWatchProps, 
+  IMapProps
 } from './StopWatch';
 
 describe('StopWatch Component', () => {
-  const key = uuidv1();
   const dispatch = jest.fn();
+  const key: string = uuidv1();
 
-  const props = {
+  const props: IStopWatchProps = {
     className: 'stopwatch',
     id: 'testerid',
     runningFilter: 'All',
@@ -53,7 +56,7 @@ describe('StopWatch Component', () => {
 
   test('mapStateToProps returns expected state', () => {
     const stopWatchState = getState();
-    const state = {
+    const state: IState = {
       ...stopWatchState,
       stopWatchState: {
         stopWatches: {
@@ -69,7 +72,7 @@ describe('StopWatch Component', () => {
       }
     }
     
-    const own = {
+    const own: IMapProps = {
       className: 'stopwatch',
       id: 'testid',
       runningFilter: 'All'

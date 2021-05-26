@@ -5,11 +5,11 @@ import {
     Reducer
   } from 'redux';
 
+import { IState } from '../IState';
 import {
     IStopWatchState,
     getInitialStopWatchState
 } from '../../StopWatchContainer/Store/StopWatchStateBundle';
-import { IState } from '../IState';
 import { getReducers } from '../../State/GetReducers';
 
 export function initialStoreState(): Readonly<IState> {

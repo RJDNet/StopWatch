@@ -17,7 +17,7 @@ interface IStoreProps {
 	stopWatchList: string[];
 }
 
-type IComponentProps = IRawProps & IStoreProps;
+export type IStopWatchContainerProps = IRawProps & IStoreProps;
 
 // Defaults
 const DEFAULT_CLASSNAME: string = 'stopwatches-container';
@@ -41,14 +41,14 @@ const DROPDOWN_CONTENT_CLASSNAME: string = `${DROPDOWN_CONTAINER_CLASSNAME}__dro
 const STOPWATCH_FLEXCONTAINER_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch-flexcontainer`;
 const STOPWATCH_CLASSNAME: string = `${DEFAULT_CLASSNAME}__stopwatch`;
 
-export function StopWatchContainer(props: IComponentProps): JSX.Element {
+export function StopWatchContainer(props: IStopWatchContainerProps): JSX.Element {
 	const {
 		dispatch,
 		stopWatchList
 	} = props;
 
-	const [amount, setAmount] = React.useState('');
-	const [visible, setVisible] = React.useState('All');
+	const [amount, setAmount] = React.useState<string>('');
+	const [visible, setVisible] = React.useState<string>('All');
 
 	function removeAllStopWatches(): void {
 		dispatch(actionCreators.removeAllWatches());
@@ -70,12 +70,12 @@ export function StopWatchContainer(props: IComponentProps): JSX.Element {
 		dispatch(actionCreators.addWatch());
 	}
 
-	function addXStopWatch (): void {
+	function addXStopWatch(): void {
 		dispatch(actionCreators.addXWatch(parseInt(amount)));
 		setAmount('');
 	}
 
-	const watches: React.ReactElement[] = stopWatchList.map(k => {
+	const watches: JSX.Element[] = stopWatchList.map((k: string) => {
 		return (
 			<Zoom key={k}>
 				<StopWatch

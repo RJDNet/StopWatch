@@ -2,6 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 
 import { getState } from '../../State/__mocks__/Store';
 import { IState } from '../../State/IState';
+import { IStopWatch } from './StopWatchStateBundle';
 import { 
     getStopWatchList,
     getStopWatch
@@ -9,8 +10,8 @@ import {
 
 describe('selectors', () => {
     test('getStopWatchList selector returns correct state', () => {
-        const key = uuidv1();
-        const state = getState();
+        const key: string = uuidv1();
+        const state: Readonly<IState> = getState();
         const mockEmptyList: string[] = [];
         const update: IState = {
             stopWatchState: {
@@ -20,8 +21,8 @@ describe('selectors', () => {
             }
         }
 
-        const gotList = getStopWatchList(state);
-        const gotFilledList = getStopWatchList(update);
+        const gotList: string[] = getStopWatchList(state);
+        const gotFilledList: string[] = getStopWatchList(update);
 
         expect(gotList).toEqual(mockEmptyList);
         expect(gotFilledList).toEqual(update.stopWatchState.filteredList);
@@ -30,7 +31,7 @@ describe('selectors', () => {
     });
 
     test('getStopWatch selector returns correct state', () => {
-        const id = uuidv1();
+        const id: string = uuidv1();
         const update: IState = {
             stopWatchState: {
                 stopWatches: {
@@ -44,7 +45,7 @@ describe('selectors', () => {
                 filteredList: [id]
             }
         }
-        const gotStopWatch = getStopWatch(id, update);
+        const gotStopWatch: IStopWatch | undefined = getStopWatch(id, update);
 
         if(gotStopWatch) {
             if(gotStopWatch.key) {

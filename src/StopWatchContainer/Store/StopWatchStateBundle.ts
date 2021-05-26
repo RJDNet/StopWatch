@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v1 as uuidv1 } from 'uuid';
 
 // Action Types
 export enum ActionTypes {
@@ -180,7 +180,7 @@ export function getInitialStopWatchState(): Readonly<IStopWatchState> {
 
 // Sub Reducers
 export function addWatch(state: IStopWatchState): IStopWatchState {
-    const key: string = uuidv4();
+    const key: string = uuidv1();
 
     const update: IStopWatchState = {
         ...state,
@@ -201,10 +201,10 @@ export function addWatch(state: IStopWatchState): IStopWatchState {
 
 export function addXWatch(state: IStopWatchState, action: IAddXStopWatch): IStopWatchState {
     const { amount } = action.payload;
-    let update = state;
+    let update: IStopWatchState = state;
 
     for (let i = 1; i <= amount; i++) {
-        const key: string = uuidv4();
+        const key: string = uuidv1();
 
         let newUpdate: IStopWatchState = {
             ...update,
@@ -242,6 +242,7 @@ function removeWatch(state: IStopWatchState, action: IRemoveStopWatch): IStopWat
     const delKey = {
         ...state
     }
+
     delete delKey.stopWatches[key]
 
     const update: IStopWatchState = {
@@ -349,6 +350,7 @@ export const stopWatchReducer = (state: IStopWatchState = getInitialStopWatchSta
             return tickWatch(state, action);
         case ActionTypes.RESET_STOPWATCH:
             return resetWatch(state, action);
-        default: return state;
+        default: 
+            return state;
     }
 }
